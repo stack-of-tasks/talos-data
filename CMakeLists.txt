@@ -1,17 +1,20 @@
-cmake_minimum_required(VERSION 2.8.3)
-project(talos_description)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
+INCLUDE(cmake/base.cmake)
+#include(cmake/ros.cmake)
 
-find_package(catkin REQUIRED)
 
-catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES talos_description
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
-)
+SET(PROJECT_NAME talos-data)
+SET(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")
+SET(PROJECT_URL "https://redmine.laas.fr/projects/pyrene-talos/repository/talos-data")
 
-foreach(dir config gazebo meshes robots urdf srdf)
-    install(DIRECTORY ${dir}/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+SETUP_PROJECT()
 
+# Find xml_reflection
+ADD_REQUIRED_DEPENDENCY("urdfdom >= 0.2.9")
+
+FOREACH(dir config gazebo meshes robots urdf srdf)
+  INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/${dir}
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${dir})
+ENDFOREACH(dir)
+
+SETUP_PROJECT_FINALIZE()

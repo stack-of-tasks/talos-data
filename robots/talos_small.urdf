@@ -289,6 +289,7 @@
       <!-- inertia tensor computed analytically for a solid cuboid -->
       <inertia ixx="0.000030" ixy="0.0" ixz="0.0" iyy="0.000030" iyz="0.0" izz="0.000002"/>
     </inertial>
+      <!--
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -298,6 +299,7 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+      -->
     <collision>
       <origin rpy="0 0 0" xyz="-0.01 0.0025 0"/>
       <geometry>
@@ -454,7 +456,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_1.STL" scale="1 1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_1_collision.STL" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -487,7 +489,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_2.STL" scale="1 1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_2_collision.STL" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -520,7 +522,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_3.STL" scale="1 1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_3_collision.STL" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -556,7 +558,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_4.STL" scale="1 1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_4_collision.STL" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -627,7 +629,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_5.STL" scale="1 1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_5_collision.STL" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
@@ -660,7 +662,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_6.STL" scale="1 1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_6_collision.STL" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
@@ -838,7 +840,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_1.STL" scale="1 -1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_1_collision.STL" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -871,7 +873,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_2.STL" scale="1 -1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_2_collision.STL" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -904,7 +906,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_3.STL" scale="1 -1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_3_collision.STL" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -940,7 +942,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_4.STL" scale="1 -1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_4_collision.STL" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -1011,7 +1013,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_5.STL" scale="1 -1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_5_collision.STL" scale="1 -1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
@@ -1044,7 +1046,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_6.STL" scale="1 -1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_6_collision.STL" scale="1 -1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
@@ -1085,7 +1087,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_description/meshes/arm/arm_7.STL" scale="1 -1 1"/>
+        <mesh filename="package://talos_description/meshes/arm/arm_7_collision.STL" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
