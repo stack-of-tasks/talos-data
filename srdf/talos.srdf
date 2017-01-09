@@ -21,7 +21,7 @@
         <joint name="wrist_right_tool_joint" />
         <chain base_link="torso_2_link" tip_link="wrist_right_ft_tool_link" />
     </group>
-    <group name="gripper_right">
+<!--    <group name="gripper_right">
         <link name="gripper_right_base_link" />
         <link name="gripper_right_inner_double_link" />
         <link name="gripper_right_fingertip_1_link" />
@@ -32,18 +32,6 @@
         <link name="gripper_right_motor_single_link" />
         <joint name="gripper_right_joint" />
         <chain base_link="wrist_right_ft_tool_link" tip_link="gripper_right_base_link" />
-    </group>
-    <group name="l_arm">
-        <joint name="arm_left_1_joint" />
-        <joint name="arm_left_2_joint" />
-        <joint name="arm_left_3_joint" />
-        <joint name="arm_left_4_joint" />
-        <joint name="arm_left_5_joint" />
-        <joint name="arm_left_6_joint" />
-        <joint name="arm_left_7_joint" />
-        <joint name="wrist_left_ft_joint" />
-        <joint name="wrist_left_tool_joint" />
-        <chain base_link="torso_2_link" tip_link="wrist_left_ft_tool_link" />
     </group>
     <group name="gripper_left">
         <link name="gripper_left_base_link" />
@@ -56,6 +44,19 @@
         <link name="gripper_left_motor_single_link" />
         <joint name="gripper_left_joint" />
         <chain base_link="wrist_left_ft_tool_link" tip_link="gripper_left_base_link" />
+    </group>
+-->
+    <group name="l_arm">
+        <joint name="arm_left_1_joint" />
+        <joint name="arm_left_2_joint" />
+        <joint name="arm_left_3_joint" />
+        <joint name="arm_left_4_joint" />
+        <joint name="arm_left_5_joint" />
+        <joint name="arm_left_6_joint" />
+        <joint name="arm_left_7_joint" />
+        <joint name="wrist_left_ft_joint" />
+        <joint name="wrist_left_tool_joint" />
+        <chain base_link="torso_2_link" tip_link="wrist_left_ft_tool_link" />
     </group>
     <group name="torso">
         <joint name="torso_1_joint" />
@@ -144,15 +145,15 @@
         <joint name="arm_right_7_joint" value="0.1" />
         <joint name="head_1_joint" value="0" />
         <joint name="head_2_joint" value="0" />
-        <joint name="leg_left_1_joint" value="0.000093" />
-        <joint name="leg_left_2_joint" value="0.000406" />
-        <joint name="leg_left_3_joint" value="-0.449102" />
+        <joint name="leg_left_1_joint" value="0.0" />
+        <joint name="leg_left_2_joint" value="0.0" />
+        <joint name="leg_left_3_joint" value="-0.411354" />
         <joint name="leg_left_4_joint" value="0.859395" />
         <joint name="leg_left_5_joint" value="-0.448041" />
         <joint name="leg_left_6_joint" value="-0.001708" />
-        <joint name="leg_right_1_joint" value="0.000093" />
-        <joint name="leg_right_2_joint" value="0.000406" />
-        <joint name="leg_right_3_joint" value="-0.449102" />
+        <joint name="leg_right_1_joint" value="0.0" />
+        <joint name="leg_right_2_joint" value="0.0" />
+        <joint name="leg_right_3_joint" value="-0.411354" />
         <joint name="leg_right_4_joint" value="0.859395" />
         <joint name="leg_right_5_joint" value="-0.448041" />
         <joint name="leg_right_6_joint" value="-0.001708" />
