@@ -11,8 +11,8 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <xacro:include filename="$(find talos_description)/urdf/deg_to_rad.xacro" />
-  <xacro:include filename="$(find talos_description)/urdf/arm/wrist.transmission.xacro" />
+  <xacro:include filename="$(find talos-data)/urdf/deg_to_rad.xacro" />
+  <xacro:include filename="$(find talos-data)/urdf/arm/wrist.transmission.xacro" />
 
   <!--Constant parameters-->
   <xacro:property name="wrist_friction"       value="1.0" />
@@ -44,14 +44,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/arm/arm_5.STL" scale="1 ${reflect} 1"/>
+          <mesh filename="package://talos-data/meshes/arm/arm_5.STL" scale="1 ${reflect} 1"/>
         </geometry>
         <material name="LightGrey" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/arm/arm_5_collision.STL" scale="1 ${reflect} 1"/>
+          <mesh filename="package://talos-data/meshes/arm/arm_5_collision.STL" scale="1 ${reflect} 1"/>
         </geometry>
       </collision>
     </link>
@@ -84,14 +84,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/arm/arm_6.STL" scale="1 ${reflect} 1"/>
+          <mesh filename="package://talos-data/meshes/arm/arm_6.STL" scale="1 ${reflect} 1"/>
         </geometry>
         <material name="LightGrey" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/arm/arm_6_collision.STL" scale="1 ${reflect} 1"/>
+          <mesh filename="package://talos-data/meshes/arm/arm_6_collision.STL" scale="1 ${reflect} 1"/>
         </geometry>
       </collision>
     </link>
@@ -134,7 +134,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/arm/arm_7.STL" scale="1 ${reflect} 1"/>
+          <mesh filename="package://talos-data/meshes/arm/arm_7.STL" scale="1 ${reflect} 1"/>
         </geometry>
         <material name="DarkGrey" />
       </visual>
@@ -142,7 +142,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/arm/arm_7_collision.STL" scale="1 ${reflect} 1"/>
+          <mesh filename="package://talos-data/meshes/arm/arm_7_collision.STL" scale="1 ${reflect} 1"/>
         </geometry>
       </collision>
     </link>

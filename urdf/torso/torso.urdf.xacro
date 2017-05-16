@@ -11,9 +11,9 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <xacro:include filename="$(find talos_description)/urdf/deg_to_rad.xacro" />
-  <xacro:include filename="$(find talos_description)/urdf/torso/torso.transmission.xacro" />
-  <xacro:include filename="$(find talos_description)/urdf/sensors/imu.urdf.xacro" />
+  <xacro:include filename="$(find talos-data)/urdf/deg_to_rad.xacro" />
+  <xacro:include filename="$(find talos-data)/urdf/torso/torso.transmission.xacro" />
+  <xacro:include filename="$(find talos-data)/urdf/sensors/imu.urdf.xacro" />
 
  <!--Constant parameters-->
   <xacro:property name="torso_max_vel"  value="5.4" />
@@ -36,7 +36,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/torso/torso_2.STL" scale="1 1 1"/>
+          <mesh filename="package://talos-data/meshes/torso/torso_2.STL" scale="1 1 1"/>
         </geometry>
         <material name="LightGrey" />
       </visual>
@@ -44,7 +44,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/torso/torso_2_collision.STL" scale="1 1 1"/>
+          <mesh filename="package://talos-data/meshes/torso/torso_2_collision.STL" scale="1 1 1"/>
         </geometry>
       </collision>
     </link>
@@ -64,14 +64,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/torso/torso_1.STL" scale="1 1 1"/>
+          <mesh filename="package://talos-data/meshes/torso/torso_1.STL" scale="1 1 1"/>
         </geometry>
         <material name="LightGrey" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/torso/torso_1.STL" scale="1 1 1"/>
+          <mesh filename="package://talos-data/meshes/torso/torso_1.STL" scale="1 1 1"/>
         </geometry>
       </collision>
     </link>
@@ -107,7 +107,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/torso/base_link.STL" scale="1 1 1"/>
+          <mesh filename="package://talos-data/meshes/torso/base_link.STL" scale="1 1 1"/>
         </geometry>
         <material name="LightGrey" />
       </visual>
@@ -115,7 +115,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos_description/meshes/torso/base_link_collision.STL" scale="1 1 1"/>
+          <mesh filename="package://talos-data/meshes/torso/base_link_collision.STL" scale="1 1 1"/>
         </geometry>
       </collision>
     </link>
