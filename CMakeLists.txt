@@ -7,6 +7,7 @@ SET(PROJECT_NAME talos_data)
 SET(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")
 SET(PROJECT_URL "https://redmine.laas.fr/projects/pyrene-talos/repository/talos-data")
 
+set(CXX_DISABLE_WERROR True)
 SETUP_PROJECT()
 
 find_package(catkin REQUIRED)
