@@ -1385,7 +1385,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos-data/meshes/gripper/inner_double_collision.STL" scale="1 1 1"/>
+        <mesh filename="package://talos-data/meshes/gripper/inner_double.STL" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -1497,7 +1497,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos-data/meshes/gripper/inner_single_collision.STL" scale="1 1 1"/>
+        <mesh filename="package://talos-data/meshes/gripper/inner_single.STL" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -1740,7 +1740,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos-data/meshes/gripper/inner_double_collision.STL" scale="1 1 1"/>
+        <mesh filename="package://talos-data/meshes/gripper/inner_double.STL" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -1852,7 +1852,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos-data/meshes/gripper/inner_single_collision.STL" scale="1 1 1"/>
+        <mesh filename="package://talos-data/meshes/gripper/inner_single.STL" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
