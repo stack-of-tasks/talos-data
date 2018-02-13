@@ -1,19 +1,41 @@
 variables:
   GIT_SSL_NO_VERIFY: "true"
-  PROJECT: "talos-data"
-  PROJECT_PATH: "pyrene-dev/${PROJECT}"
-  REGISTRY_IMAGES: "${CI_REGISTRY}/gsaurel/buildfarm"
-.build: &build
+  GIT_SUBMODULE_STRATEGY: "recursive"
+  GIT_DEPTH: "3"
+  NAMESPACE: pyrene-dev
+  PROJECT: talos_data
+  IMAGE: "${CI_REGISTRY}/${NAMESPACE}/${PROJECT}"
+
+cache:
+  paths:
+    - build/ccache
+
+
+.robotpkg-talos-data: &robotpkg-talos-data
+  variables:
+    ROBOTPKG: talos-data
+    CATEGORY: wip
   before_script:
-    - eval $(ssh-agent -s)
-    - ssh-add <(echo "${SSH_DEPLOY_KEY}")
-    - echo "REPOSITORY.${PROJECT}=git ${CI_PROJECT_DIR}" >> /opt/openrobots/etc/robotpkg.conf
+    - mkdir -p build/ccache
+    - cd build
+    - export CCACHE_BASEDIR=${PWD}
+    - export CCACHE_DIR=${PWD}/ccache
   script:
-    - /checkout.sh
-    - cd /root/robotpkg/wip/${PROJECT} && make install
-build-14:
-    image: ${REGISTRY_IMAGES}/${PROJECT_PATH}:14.04
-    <<: *build
-build-16:
-    image: ${REGISTRY_IMAGES}/${PROJECT_PATH}:16.04
-    <<: *build
+    - cd /root/robotpkg/${CATEGORY}/${ROBOTPKG}
+    - echo "MASTER_REPOSITORY=git ${CI_PROJECT_DIR}" >> Makefile
+    - make checkout
+    - make install
+    - cd work.*/${PROJECT}*/
+    - make test
+  retry: 2
+  except:
+    - gh-pages
+
+
+robotpkg-talos-data-14.04:
+  <<: *robotpkg-talos-data
+  image: ${IMAGE}:14.04
+
+robotpkg-talos-data-16.04:
+  <<: *robotpkg-talos-data
+  image: ${IMAGE}:16.04
