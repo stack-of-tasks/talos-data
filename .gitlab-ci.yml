@@ -39,3 +39,7 @@ robotpkg-talos-data-14.04:
 robotpkg-talos-data-16.04:
   <<: *robotpkg-talos-data
   image: ${IMAGE}:16.04
+
+robotpkg-talos-data-dubnium:
+  <<: *robotpkg-talos-data
+  image: ${IMAGE}:dubnium
