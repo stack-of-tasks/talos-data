@@ -13,12 +13,12 @@
         xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
         xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
 
-  <xacro:include filename="$(find talos-data)/urdf/torso/torso.urdf.xacro" />
-  <xacro:include filename="$(find talos-data)/urdf/head/head.urdf.xacro" />
-  <xacro:include filename="$(find talos-data)/urdf/arm/arm.urdf.xacro" />
-  <xacro:include filename="$(find talos-data)/urdf/sensors/ftsensor.urdf.xacro" />
-  <!--  <xacro:include filename="$(find talos-data)/urdf/gripper/gripper.urdf.xacro" /> -->
-  <xacro:include filename="$(find talos-data)/urdf/leg/leg.urdf.xacro" />
+  <xacro:include filename="$(find talos_data)/urdf/torso/torso.urdf.xacro" />
+  <xacro:include filename="$(find talos_data)/urdf/head/head.urdf.xacro" />
+  <xacro:include filename="$(find talos_data)/urdf/arm/arm.urdf.xacro" />
+  <xacro:include filename="$(find talos_data)/urdf/sensors/ftsensor.urdf.xacro" />
+  <!--  <xacro:include filename="$(find talos_data)/urdf/gripper/gripper.urdf.xacro" /> -->
+  <xacro:include filename="$(find talos_data)/urdf/leg/leg.urdf.xacro" />
 
   <xacro:talos_torso name="torso" />
 
@@ -38,8 +38,8 @@
   <xacro:talos_leg prefix="right" reflect="-1" />
 
   <!-- Generic simulatalos_gazebo plugins -->
-  <xacro:include filename="$(find talos-data)/gazebo/gazebo.urdf.xacro" />
+  <xacro:include filename="$(find talos_data)/gazebo/gazebo.urdf.xacro" />
   <!-- Materials for visualization -->
-  <xacro:include filename="$(find talos-data)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find talos_data)/urdf/materials.urdf.xacro" />
 
 </robot>

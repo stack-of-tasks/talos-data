@@ -3,6 +3,6 @@
   <arg name="robot" default="full"/>
   
   <!-- Robot description -->
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find talos-data)/robots/talos_$(arg robot).urdf.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find talos_data)/robots/talos_$(arg robot).urdf.xacro'" />
 
 </launch>

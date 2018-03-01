@@ -11,9 +11,9 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <xacro:include filename="$(find talos-data)/urdf/deg_to_rad.xacro" />
-  <xacro:include filename="$(find talos-data)/urdf/head/head.transmission.xacro" />
-  <xacro:include filename="$(find talos-data)/urdf/sensors/orbbec_astra_pro.urdf.xacro" />
+  <xacro:include filename="$(find talos_data)/urdf/deg_to_rad.xacro" />
+  <xacro:include filename="$(find talos_data)/urdf/head/head.transmission.xacro" />
+  <xacro:include filename="$(find talos_data)/urdf/sensors/orbbec_astra_pro.urdf.xacro" />
 
   <!--Constant parameters-->
   <xacro:property name="head_friction" value="1.0" />
@@ -37,7 +37,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos-data/meshes/head/head_1.stl" scale="1 1 1"/>
+          <mesh filename="package://talos_data/meshes/head/head_1.stl" scale="1 1 1"/>
         </geometry>
         <material name="DarkGrey" />
       </visual>
@@ -45,7 +45,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos-data/meshes/head/head_1_collision.stl" scale="1 1 1"/>
+          <mesh filename="package://talos_data/meshes/head/head_1_collision.stl" scale="1 1 1"/>
         </geometry>
       </collision>
     </link>
@@ -97,7 +97,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos-data/meshes/head/head_2.stl" scale="1 1 1"/>
+          <mesh filename="package://talos_data/meshes/head/head_2.stl" scale="1 1 1"/>
         </geometry>
         <material name="LightGrey" />
       </visual>
@@ -105,7 +105,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://talos-data/meshes/head/head_2_collision.stl" scale="1 1 1"/>
+          <mesh filename="package://talos_data/meshes/head/head_2_collision.stl" scale="1 1 1"/>
         </geometry>
       </collision>
     </link>
