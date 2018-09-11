@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>talos_description</name>
+  <name>talos_data</name>
   <version>1.0.4</version>
   <description>The talos_description package</description>
 
