@@ -2033,14 +2033,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_z_lo_res.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_z_lo_res.stl" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_z_collision.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_z_collision.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2062,14 +2062,14 @@
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_x_lo_res.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_x_lo_res.stl" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_x_collision.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_x_collision.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2091,14 +2091,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_y_lo_res.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_y_lo_res.stl" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_y_collision.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_y_collision.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2120,14 +2120,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/knee_lo_res.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/knee_lo_res.stl" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/knee_collision.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/knee_collision.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2149,14 +2149,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/ankle_Y_lo_res.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/ankle_Y_lo_res.stl" scale="1 1 1"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/ankle_Y_collision.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/ankle_Y_collision.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2178,7 +2178,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/ankle_X_lo_res.stl" scale="1 1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/ankle_X_lo_res.stl" scale="1 1 1"/>
       </geometry>
       <material name="Grey"/>
     </visual>
@@ -2359,14 +2359,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_z_lo_res.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_z_lo_res.stl" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_z_collision.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_z_collision.stl" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2388,14 +2388,14 @@
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_x_lo_res.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_x_lo_res.stl" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_x_collision.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_x_collision.stl" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2417,14 +2417,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_y_lo_res.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_y_lo_res.stl" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/hip_y_collision.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/hip_y_collision.stl" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2446,14 +2446,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/knee_lo_res.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/knee_lo_res.stl" scale="1 -1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/knee_collision.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/knee_collision.stl" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2475,14 +2475,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/ankle_Y_lo_res.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/ankle_Y_lo_res.stl" scale="1 -1 1"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/ankle_Y_collision.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/ankle_Y_collision.stl" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2504,7 +2504,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://talos_data/meshes/v2/ankle_X_lo_res.stl" scale="1 -1.0 1"/>
+        <mesh filename="package://talos_data/meshes/v2/ankle_X_lo_res.stl" scale="1 -1 1"/>
       </geometry>
       <material name="Grey"/>
     </visual>

@@ -22,7 +22,7 @@ catkin_package(
 # Find xml_reflection
 ADD_REQUIRED_DEPENDENCY("urdfdom >= 0.2.9")
 
-FOREACH(dir config gazebo meshes robots urdf srdf)
+FOREACH(dir config gazebo meshes robots urdf)
   INSTALL(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 ENDFOREACH(dir)
