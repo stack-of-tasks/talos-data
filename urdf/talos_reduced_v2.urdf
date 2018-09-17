@@ -1349,7 +1349,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="gripper_left_inner_double_joint" type="revolute">
+  <joint name="gripper_left_inner_double_joint" type="fixed">
     <parent link="gripper_left_base_link"/>
     <child link="gripper_left_inner_double_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.00000 0.00525 -0.05598"/>
@@ -1433,7 +1433,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="gripper_left_motor_single_joint" type="revolute">
+  <joint name="gripper_left_motor_single_joint" type="fixed">
     <parent link="gripper_left_base_link"/>
     <child link="gripper_left_motor_single_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.00000 -0.02025 -0.03000"/>
@@ -1461,7 +1461,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="gripper_left_inner_single_joint" type="revolute">
+  <joint name="gripper_left_inner_single_joint" type="fixed">
     <parent link="gripper_left_base_link"/>
     <child link="gripper_left_inner_single_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.00000 -0.00525 -0.05598"/>
@@ -1702,7 +1702,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="gripper_right_inner_double_joint" type="revolute">
+  <joint name="gripper_right_inner_double_joint" type="fixed">
     <parent link="gripper_right_base_link"/>
     <child link="gripper_right_inner_double_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.00000 0.00525 -0.05598"/>
@@ -1786,7 +1786,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="gripper_right_motor_single_joint" type="revolute">
+  <joint name="gripper_right_motor_single_joint" type="fixed">
     <parent link="gripper_right_base_link"/>
     <child link="gripper_right_motor_single_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.00000 -0.02025 -0.03000"/>
@@ -1814,7 +1814,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="gripper_right_inner_single_joint" type="revolute">
+  <joint name="gripper_right_inner_single_joint" type="fixed">
     <parent link="gripper_right_base_link"/>
     <child link="gripper_right_inner_single_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.00000 -0.00525 -0.05598"/>
