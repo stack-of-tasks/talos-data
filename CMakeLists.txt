@@ -2,10 +2,10 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 INCLUDE(cmake/base.cmake)
 #include(cmake/ros.cmake)
 
-
+SET(PROJECT_ORG pyrene-dev)
 SET(PROJECT_NAME talos_data)
 SET(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")
-SET(PROJECT_URL "https://redmine.laas.fr/projects/pyrene-talos/repository/talos-data")
+SET(PROJECT_URL "https://gepgitlab.laas.fr/${PROJECT_ORG}/${PROJECT_NAME}")
 
 set(CXX_DISABLE_WERROR True)
 SETUP_PROJECT()
