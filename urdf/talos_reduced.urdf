@@ -2184,21 +2184,20 @@
       </geometry>
       <material name="Grey"/>
     </visual>
+    <collision>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://talos_data/meshes/v2/ankle_X_collision.stl" scale="1 1 1"/>
+    </geometry>
+    </collision> 
     <!--
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://talos_data/meshes/v2/ankle_X_collision.stl" scale="1 ${reflect*1} 1"/>
-        </geometry>
-      </collision> 
-      
-      -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.1"/>
       <geometry>
         <box size="0.21 0.13 0.02"/>
       </geometry>
     </collision>
+    -->
   </link>
   <joint name="leg_left_6_joint" type="revolute">
     <parent link="leg_left_5_link"/>
@@ -2510,21 +2509,20 @@
       </geometry>
       <material name="Grey"/>
     </visual>
+    <collision>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://talos_data/meshes/v2/ankle_X_collision.stl" scale="1 -1 1"/>
+    </geometry>
+    </collision> 
     <!--
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://talos_data/meshes/v2/ankle_X_collision.stl" scale="1 ${reflect*1} 1"/>
-        </geometry>
-      </collision> 
-      
-      -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.1"/>
       <geometry>
         <box size="0.21 0.13 0.02"/>
       </geometry>
     </collision>
+    -->
   </link>
   <joint name="leg_right_6_joint" type="revolute">
     <parent link="leg_right_5_link"/>
