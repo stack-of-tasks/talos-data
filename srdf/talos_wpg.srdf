@@ -144,6 +144,8 @@
         <joint name="arm_right_5_joint" value="0" />
         <joint name="arm_right_6_joint" value="0" />
         <joint name="arm_right_7_joint" value="0.1" />
+        <joint name="gripper_left_joint" value="0" />
+        <joint name="gripper_right_joint" value="0" />	
         <joint name="head_1_joint" value="0" />
         <joint name="head_2_joint" value="0" />
         <joint name="leg_left_1_joint" value="0.0" />
