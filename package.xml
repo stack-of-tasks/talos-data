@@ -2,9 +2,9 @@
 <package format="2">
   <name>talos_data</name>
   <version>1.0.4</version>
-  <description>The talos_description package</description>
+  <description>The talos_data package</description>
 
-  <maintainer email="hilario.tome@pal-robotics.com">Hilario Tomé</maintainer>
+  <maintainer email="olivier.stasse@laas.fr">Olivier Stasse</maintainer>
 
   <license>LGPL-3.0</license>
 

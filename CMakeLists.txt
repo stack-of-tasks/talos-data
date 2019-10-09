@@ -21,8 +21,25 @@ catkin_package(
 
 # Find xml_reflection
 ADD_REQUIRED_DEPENDENCY("urdfdom >= 0.2.9")
+ADD_REQUIRED_DEPENDENCY("gazebo >= 7.12.0")
+ADD_REQUIRED_DEPENDENCY(roscpp)
 
-FOREACH(dir config gazebo meshes robots urdf srdf)
+SET(LIBRARY_NAME ${PROJECT_NAME})
+
+ADD_LIBRARY(SpringPlugin
+  SHARED
+  src/SpringPlugin.cc
+)
+
+INSTALL(TARGETS
+  SpringPlugin
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  )
+PKG_CONFIG_USE_DEPENDENCY(SpringPlugin roscpp)
+PKG_CONFIG_USE_DEPENDENCY(SpringPlugin gazebo)
+
+FOREACH(dir config gazebo meshes robots urdf srdf launch)
   INSTALL(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 ENDFOREACH(dir)

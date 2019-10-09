@@ -3,7 +3,7 @@
     <arg name="foot_collision" default="default"/>
     <arg name="enable_crane" default="false"/>
 
-    <include file="$(find talos_description)/robots/upload.launch">
+    <include file="$(find talos_data)/robots/upload.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="foot_collision" value="$(arg foot_collision)"/>
         <arg name="enable_crane" value="$(arg enable_crane)"/>
