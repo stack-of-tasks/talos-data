@@ -57,7 +57,7 @@
       <child link="leg_${prefix}_1_link_passive"/>
       <origin xyz="0.0 0.0 0.0"
               rpy="0.00000 0.00000 0.00000"/>
-      <axis xyz="0 1 0" />
+      <axis xyz="1 0 0" />
       <limit lower="${(-180.0)*deg_to_rad}" upper="${(180.0)*deg_to_rad}" effort="100" velocity="3.87" />
       <dynamics friction="970.0" damping="0.0"/>
     </joint>
