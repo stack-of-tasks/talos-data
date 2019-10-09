@@ -73,9 +73,9 @@
     <transmission name="leg_${prefix}_1_passive_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="leg_${prefix}_1_motor" >
-        <mechanicalReduction>${reduction}</mechanicalReduction>
+        <mechanicalReduction>1.0</mechanicalReduction>
       </actuator>
-      <joint name="leg_${prefix}_1_joint">
+      <joint name="leg_${prefix}_1_joint_passive">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
