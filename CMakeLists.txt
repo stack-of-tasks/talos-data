@@ -10,7 +10,7 @@ SET(PROJECT_URL "https://gepgitlab.laas.fr/${PROJECT_ORG}/${PROJECT_NAME}")
 INCLUDE(cmake/base.cmake)
 
 set(CXX_DISABLE_WERROR True)
-SETUP_PROJECT()
+PROJECT(${PROJECT_NAME} CXX)
 
 find_package(catkin REQUIRED)
 
