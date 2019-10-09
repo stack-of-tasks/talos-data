@@ -22,7 +22,7 @@ To start the flexibilities:
 roslaunch talos_data talos_gazebo.launch enable_leg_passive:=true
 ```
 
-You should see in the robot model two new joints:
+You should see in the robot model two new links:
 ```
 leg_left_1_link_passive
 leg_right_1_link_passive
@@ -57,9 +57,9 @@ You can create new joints by expanding the robot kinematic tree
 and adding the same lines in the xacro files.
 
 The spring constants are modified by the associated fields
-*kp* and *kd*
+*kp* and *kd*.
 The name of the joint to which this apply is specified by the field
-*joint_spring*
+*joint_spring*.
 
 The plugin is generating a torque based on the actuator state using:
 $$\tau = - kp q - kd \dot{q}$$ where $q$ is the actuator position and $\dot{q}$
@@ -67,7 +67,7 @@ is the actuator velocity.
 
 This might be changed in the future to cope with a different equilibrium point.
 
-Finally to have the state of the joint you need to add the following lines:
+Finally to have the state of the joint in the topic */joint_states* you need to add the following lines:
 ```
     <transmission name="leg_${prefix}_1_passive_trans">
       <type>transmission_interface/SimpleTransmission</type>
