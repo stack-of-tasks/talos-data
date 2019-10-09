@@ -22,10 +22,11 @@
   <xacro:include filename="$(find talos_data)/urdf/arm/arm.urdf.xacro" />
   <xacro:include filename="$(find talos_data)/urdf/sensors/ftsensor.urdf.xacro" />
   <xacro:include filename="$(find talos_data)/urdf/gripper/gripper.urdf.xacro" />
-  <!--  <xacro:if value="$(arg enable_leg_passive)"> -->
+  <xacro:if value="$(arg enable_leg_passive)">
     <xacro:include filename="$(find talos_data)/urdf/leg/leg_passive.urdf.xacro" />
-  <!-- </xacro:if> -->
-  <!-- <xacro:unless value="$(arg enable_leg_passive)">
+  </xacro:if>
+  <xacro:unless name="var_enable_leg_passive" value="$(arg enable_leg_passive)"/>
+  <xacro:unless value="${var_enable_leg_passive != 'true'}">
     <xacro:include filename="$(find talos_data)/urdf/leg/leg.urdf.xacro" />
   </xacro:unless> -->
   

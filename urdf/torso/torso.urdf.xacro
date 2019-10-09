@@ -105,6 +105,15 @@
       </collision>
     </link>
 
+    <!-- <xacro:if value="$(arg enable_fixed_robot)"> -->
+      <link name="world"/>
+
+      <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+      </joint>
+    <!-- </xacro:if> -->
+
     <joint name="${name}_2_joint" type="revolute">
       <parent link="${name}_1_link"/>
       <child link="${name}_2_link"/>
