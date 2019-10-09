@@ -29,21 +29,24 @@ SpringPlugin::SpringPlugin()
 }
 
 /////////////////////////////////////////////////
-void SpringPlugin::Load(physics::ModelPtr _model,
-                           sdf::ElementPtr _sdf)
+void SpringPlugin::Load(physics::ModelPtr lmodel,
+                           sdf::ElementPtr lsdf)
 {
-  this->model = _model;
+  this->model = lmodel;
 
   // hardcoded params for this test
-  this->jointExplicitName = _sdf->Get<std::string>("joint_spring");
+  if (!lsdf->HasElement("joint_spring"))
+    ROS_ERROR_NAMED("SpringPlugin","No field joint_spring for SpringPlugin");
+  else
+    this->jointExplicitName = lsdf->Get<std::string>("joint_spring");
 
-  this->kpExplicit = _sdf->Get<double>("kp");
+  this->kpExplicit = lsdf->Get<double>("kp");
 
-  this->kdExplicit = _sdf->Get<double>("kd");
+  this->kdExplicit = lsdf->Get<double>("kd");
 
   ROS_INFO_NAMED("SpringPlugin",
                  "Loading joint : %s kp: %f kd: %f",
-                 this->jointExplicitName,
+                 this->jointExplicitName.c_str(),
                  this->kpExplicit,
                  this->kdExplicit);
 }

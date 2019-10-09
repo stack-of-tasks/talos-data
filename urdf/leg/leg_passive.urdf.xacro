@@ -69,6 +69,18 @@
         <kd>0.0</kd>
       </plugin>
     </gazebo>
+
+    <transmission name="leg_${prefix}_1_passive_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="leg_${prefix}_1_motor" >
+        <mechanicalReduction>${reduction}</mechanicalReduction>
+      </actuator>
+      <joint name="leg_${prefix}_1_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+    </transmission>
+
     <!-- Joint hip_x (mesh link) : child link hip_y -> parent link hip_z -->
 
     <!-- <link name="leg_${prefix}_2_link_passive"> -->
