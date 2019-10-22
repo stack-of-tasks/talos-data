@@ -63,12 +63,17 @@ void SpringPlugin::Init()
           boost::bind(&SpringPlugin::ExplicitUpdate, this));
 }
 
- 
+
 
 /////////////////////////////////////////////////
 void SpringPlugin::ExplicitUpdate()
 {
+#if GAZEBO_MAJOR_VERSION < 9
   common::Time currTime = this->model->GetWorld()->GetSimTime();
+#else
+  common::Time currTime = this->model->GetWorld()->SimTime();
+#endif
+
   common::Time stepTime = currTime - this->prevUpdateTime;
   this->prevUpdateTime = currTime;
 
@@ -78,4 +83,3 @@ void SpringPlugin::ExplicitUpdate()
                  -this->kdExplicit * vel;
   this->jointExplicit->SetForce(0, force);
 }
-
