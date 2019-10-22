@@ -15,6 +15,18 @@ Some dummy data were added (rotor inertia) to help the dynamic regularization.
 For initial and data validated by PAL-Robotics please see the http://github.com/pal-robotics/talos_robot
 repository.
 
+## Fixed joint
+To start the robot in the air you can use:
+```
+roslaunch talos_data talos_gazebo.launch enable_fixed_robot:=true
+```
+
+## Straight robot
+To start the robot straight (i.e. not in half-sitting) you can use:
+```
+roslaunch talos_data talos_gazebo.launch starting_half_sitting:=false
+```
+
 ## Flexibilities
 
 To start the flexibilities:
