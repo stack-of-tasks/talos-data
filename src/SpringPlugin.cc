@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
-*/
+ */
 
 #include "gazebo/physics/physics.hh"
 #include "SpringPlugin.hh"
@@ -24,19 +24,15 @@ using namespace gazebo;
 GZ_REGISTER_MODEL_PLUGIN(SpringPlugin)
 
 /////////////////////////////////////////////////
-SpringPlugin::SpringPlugin()
-{
-}
+SpringPlugin::SpringPlugin() {}
 
 /////////////////////////////////////////////////
-void SpringPlugin::Load(physics::ModelPtr lmodel,
-                           sdf::ElementPtr lsdf)
-{
+void SpringPlugin::Load(physics::ModelPtr lmodel, sdf::ElementPtr lsdf) {
   this->model = lmodel;
 
   // hardcoded params for this test
   if (!lsdf->HasElement("joint_spring"))
-    ROS_ERROR_NAMED("SpringPlugin","No field joint_spring for SpringPlugin");
+    ROS_ERROR_NAMED("SpringPlugin", "No field joint_spring for SpringPlugin");
   else
     this->jointExplicitName = lsdf->Get<std::string>("joint_spring");
 
@@ -44,30 +40,22 @@ void SpringPlugin::Load(physics::ModelPtr lmodel,
 
   this->kdExplicit = lsdf->Get<double>("kd");
 
-  ROS_INFO_NAMED("SpringPlugin",
-                 "Loading joint : %s kp: %f kd: %f",
-                 this->jointExplicitName.c_str(),
-                 this->kpExplicit,
+  ROS_INFO_NAMED("SpringPlugin", "Loading joint : %s kp: %f kd: %f", this->jointExplicitName.c_str(), this->kpExplicit,
                  this->kdExplicit);
 }
 
 /////////////////////////////////////////////////
-void SpringPlugin::Init()
-{
+void SpringPlugin::Init() {
   this->jointExplicit = this->model->GetJoint(this->jointExplicitName);
 
   /*  this->jointImplicit->SetStiffnessDamping(0, this->kpImplicit,
       this->kdImplicit); */
 
-  this->updateConnection = event::Events::ConnectWorldUpdateBegin(
-          boost::bind(&SpringPlugin::ExplicitUpdate, this));
+  this->updateConnection = event::Events::ConnectWorldUpdateBegin(boost::bind(&SpringPlugin::ExplicitUpdate, this));
 }
 
-
-
 /////////////////////////////////////////////////
-void SpringPlugin::ExplicitUpdate()
-{
+void SpringPlugin::ExplicitUpdate() {
 #if GAZEBO_MAJOR_VERSION < 9
   common::Time currTime = this->model->GetWorld()->GetSimTime();
 #else
@@ -79,7 +67,6 @@ void SpringPlugin::ExplicitUpdate()
 
   double pos = this->jointExplicit->GetAngle(0).Radian();
   double vel = this->jointExplicit->GetVelocity(0);
-  double force = -this->kpExplicit * pos
-                 -this->kdExplicit * vel;
+  double force = -this->kpExplicit * pos - this->kdExplicit * vel;
   this->jointExplicit->SetForce(0, force);
 }
