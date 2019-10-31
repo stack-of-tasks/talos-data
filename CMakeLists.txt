@@ -1,6 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 
-
 SET(PROJECT_ORG pyrene-dev)
 SET(PROJECT_NAME talos_data)
 SET(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")

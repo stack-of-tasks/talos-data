@@ -65,7 +65,11 @@ void SpringPlugin::ExplicitUpdate() {
   common::Time stepTime = currTime - this->prevUpdateTime;
   this->prevUpdateTime = currTime;
 
+#if GAZEBO_MAJOR_VERSION < 9
   double pos = this->jointExplicit->GetAngle(0).Radian();
+#else
+  double pos = this->jointExplicit->Position(0);
+#endif
   double vel = this->jointExplicit->GetVelocity(0);
   double force = -this->kpExplicit * pos - this->kdExplicit * vel;
   this->jointExplicit->SetForce(0, force);
