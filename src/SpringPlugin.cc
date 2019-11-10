@@ -15,9 +15,8 @@
  *
 */
 
-#include "gazebo/physics/physics.hh"
 #include "SpringPlugin.hh"
-#include <ros/ros.h>
+
 
 using namespace gazebo;
 
@@ -44,11 +43,14 @@ void SpringPlugin::Load(physics::ModelPtr lmodel,
 
   this->kdExplicit = lsdf->Get<double>("kd");
 
+  this->axisExplicit = lsdf->Get<int>("axis");
+
   ROS_INFO_NAMED("SpringPlugin",
-                 "Loading joint : %s kp: %f kd: %f",
+                 "Loading joint : %s kp: %f kd: %f alongs %d axis",
                  this->jointExplicitName.c_str(),
                  this->kpExplicit,
-                 this->kdExplicit);
+                 this->kdExplicit,
+                 this->axisExplicit);
 }
 
 /////////////////////////////////////////////////
@@ -77,9 +79,9 @@ void SpringPlugin::ExplicitUpdate()
   common::Time stepTime = currTime - this->prevUpdateTime;
   this->prevUpdateTime = currTime;
 
-  double pos = this->jointExplicit->GetAngle(0).Radian();
-  double vel = this->jointExplicit->GetVelocity(0);
+  double pos = this->jointExplicit->GetAngle(axisExplicit).Radian();
+  double vel = this->jointExplicit->GetVelocity(axisExplicit);
   double force = -this->kpExplicit * pos
                  -this->kdExplicit * vel;
-  this->jointExplicit->SetForce(0, force);
+  this->jointExplicit->SetForce(axisExplicit, force);
 }

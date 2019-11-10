@@ -13,41 +13,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
-*/
+ */
 #ifndef __GAZEBO_SPRING_TEST_PLUGIN_HH__
 #define __GAZEBO_SPRING_TEST_PLUGIN_HH__
 
 #include <string>
+#pragma GCC diagnostic push
+#pragma GCC system_header
 
 #include "gazebo/common/Plugin.hh"
 #include "gazebo/physics/physics.hh"
 #include "gazebo/util/system.hh"
+#include <ros/ros.h>
+
+#pragma GCC diagnostic pop
 
 namespace gazebo
 {
-  class GAZEBO_VISIBLE SpringPlugin : public ModelPlugin
-  {
-    public: SpringPlugin();
-    public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf);
-    public: virtual void Init();
+class GAZEBO_VISIBLE SpringPlugin : public ModelPlugin
+{
+public: SpringPlugin();
+public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf);
+public: virtual void Init();
 
-    private: void ExplicitUpdate();
+private: void ExplicitUpdate();
 
-    private: event::ConnectionPtr updateConnection;
+private: event::ConnectionPtr updateConnection;
 
-    private: physics::ModelPtr model;
+private: physics::ModelPtr model;
 
-    private: common::Time prevUpdateTime;
+private: common::Time prevUpdateTime;
 
-    private: physics::JointPtr jointExplicit;
-    private: std::string jointExplicitName;
+private: physics::JointPtr jointExplicit;
+private: std::string jointExplicitName;
 
-    /// \brief simulate spring/damper with ExplicitUpdate function
-    private: double kpExplicit;
+  /// \brief simulate spring/damper with ExplicitUpdate function
+private: double kpExplicit;
 
-    /// \brief simulate spring/damper with ExplicitUpdate function
-    private: double kdExplicit;
-
-  };
+  /// \brief simulate spring/damper with ExplicitUpdate function
+private: double kdExplicit;
+    
+  /// \brief Specify on which axis the spring is applied.
+private: int axisExplicit;
+};
 }
 #endif
