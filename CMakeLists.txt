@@ -6,44 +6,75 @@ SET(PROJECT_NAME talos_data)
 SET(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")
 SET(PROJECT_URL "https://gepgitlab.laas.fr/${PROJECT_ORG}/${PROJECT_NAME}")
 
+# Export CMake Target
+SET(PROJECT_USE_CMAKE_EXPORT TRUE)
+
+# No warning error
+set(CXX_DISABLE_WERROR True)
+
 #include(cmake/ros.cmake)
 INCLUDE(cmake/base.cmake)
 
-set(CXX_DISABLE_WERROR True)
-PROJECT(${PROJECT_NAME} CXX)
+# Specify the project.
+cmake_policy(SET CMP0048 NEW)
+PROJECT(${PROJECT_NAME}
+  LANGUAGES
+  CXX
+  VERSION
+  ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}
+  )
 
-find_package(catkin REQUIRED)
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp)
 
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES talos_description
-#  CATKIN_DEPENDS other_catkin_pkg
+  #  INCLUDE_DIRS include
+  #  LIBRARIES talos_description
+  CATKIN_DEPENDS roscpp
 #  DEPENDS system_lib
 )
 
 # Find xml_reflection
-ADD_REQUIRED_DEPENDENCY("urdfdom >= 0.2.9")
-ADD_REQUIRED_DEPENDENCY("gazebo >= 7.0.0")
-ADD_REQUIRED_DEPENDENCY(roscpp)
+ADD_PROJECT_DEPENDENCY(urdfdom REQUIRED)
+ADD_PROJECT_DEPENDENCY(gazebo 7.0.0 REQUIRED)
+ADD_PROJECT_DEPENDENCY(roscpp)
+
+# Needed due to the CMakeTarget from gazebo.
+INCLUDE_DIRECTORIES(${GAZEBO_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES(${catkin_INCLUDE_DIRS})
+
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+
 
 SET(LIBRARY_NAME ${PROJECT_NAME})
 
-ADD_LIBRARY(SpringPlugin
+ADD_LIBRARY(${PROJECT_NAME}
   SHARED
   src/SpringPlugin.cc
 )
 
 INSTALL(TARGETS
-  SpringPlugin
+  ${PROJECT_NAME}
+  EXPORT ${TARGETS_EXPORT_NAME}  
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+ # DESTINATION bin
+ # LIBRARY DESTINATION lib
   )
-PKG_CONFIG_USE_DEPENDENCY(SpringPlugin roscpp)
-PKG_CONFIG_USE_DEPENDENCY(SpringPlugin gazebo)
+
+target_include_directories(${LIBRARY_NAME}
+  PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/>
+)
 
 FOREACH(dir config gazebo meshes robots urdf srdf launch)
   INSTALL(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 ENDFOREACH(dir)
 
-SETUP_PROJECT_FINALIZE()
+#SETUP_PROJECT_PACKAGE_FINALIZE()
