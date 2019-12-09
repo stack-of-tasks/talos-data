@@ -31,37 +31,37 @@ SpringPlugin::SpringPlugin()
 void SpringPlugin::Load(physics::ModelPtr lmodel,
                            sdf::ElementPtr lsdf)
 {
-  this->model = lmodel;
+  model_ = lmodel;
 
   // hardcoded params for this test
   if (!lsdf->HasElement("joint_spring"))
     ROS_ERROR_NAMED("SpringPlugin","No field joint_spring for SpringPlugin");
   else
-    this->jointExplicitName = lsdf->Get<std::string>("joint_spring");
+    jointExplicitName_ = lsdf->Get<std::string>("joint_spring");
 
-  this->kpExplicit = lsdf->Get<double>("kp");
+  kpExplicit_ = lsdf->Get<double>("kp");
 
-  this->kdExplicit = lsdf->Get<double>("kd");
+  kdExplicit_ = lsdf->Get<double>("kd");
 
-  this->axisExplicit = lsdf->Get<int>("axis");
+  axisExplicit_ = lsdf->Get<int>("axis");
 
   ROS_INFO_NAMED("SpringPlugin",
                  "Loading joint : %s kp: %f kd: %f alongs %d axis",
-                 this->jointExplicitName.c_str(),
-                 this->kpExplicit,
-                 this->kdExplicit,
-                 this->axisExplicit);
+                 jointExplicitName_.c_str(),
+                 kpExplicit_,
+                 kdExplicit_,
+                 axisExplicit_);
 }
 
 /////////////////////////////////////////////////
 void SpringPlugin::Init()
 {
-  this->jointExplicit = this->model->GetJoint(this->jointExplicitName);
+  jointExplicit_ = model_->GetJoint(jointExplicitName_);
 
-  /*  this->jointImplicit->SetStiffnessDamping(0, this->kpImplicit,
-      this->kdImplicit); */
+  /*  jointImplicit->SetStiffnessDamping(0, kpImplicit,
+      kdImplicit); */
 
-  this->updateConnection = event::Events::ConnectWorldUpdateBegin(
+  updateConnection_ = event::Events::ConnectWorldUpdateBegin(
           boost::bind(&SpringPlugin::ExplicitUpdate, this));
 }
 
@@ -71,17 +71,21 @@ void SpringPlugin::Init()
 void SpringPlugin::ExplicitUpdate()
 {
 #if GAZEBO_MAJOR_VERSION < 9
-  common::Time currTime = this->model->GetWorld()->GetSimTime();
+  common::Time currTime = model_->GetWorld()->GetSimTime();
 #else
-  common::Time currTime = this->model->GetWorld()->SimTime();
+  common::Time currTime = model_->GetWorld()->SimTime();
 #endif
 
-  common::Time stepTime = currTime - this->prevUpdateTime;
-  this->prevUpdateTime = currTime;
+  common::Time stepTime = currTime - prevUpdateTime_;
+  prevUpdateTime_ = currTime;
 
-  double pos = this->jointExplicit->GetAngle(axisExplicit).Radian();
-  double vel = this->jointExplicit->GetVelocity(axisExplicit);
-  double force = -this->kpExplicit * pos
-                 -this->kdExplicit * vel;
-  this->jointExplicit->SetForce(axisExplicit, force);
+#if GAZEBO_MAJOR_VERSION < 9
+  double pos = jointExplicit_->GetAngle(axisExplicit_).Radian();
+#else
+  double pos = jointExplicit_->Position(axisExplicit_);
+#endif
+  double vel = jointExplicit_->GetVelocity(axisExplicit_);
+  double force = -kpExplicit_ * pos
+                 -kdExplicit_ * vel;
+  jointExplicit_->SetForce(axisExplicit_, force);
 }

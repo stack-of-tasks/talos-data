@@ -38,23 +38,23 @@ public: virtual void Init();
 
 private: void ExplicitUpdate();
 
-private: event::ConnectionPtr updateConnection;
+private: event::ConnectionPtr updateConnection_;
 
-private: physics::ModelPtr model;
+private: physics::ModelPtr model_;
 
-private: common::Time prevUpdateTime;
+private: common::Time prevUpdateTime_;
 
-private: physics::JointPtr jointExplicit;
-private: std::string jointExplicitName;
-
-  /// \brief simulate spring/damper with ExplicitUpdate function
-private: double kpExplicit;
+private: physics::JointPtr jointExplicit_;
+private: std::string jointExplicitName_;
 
   /// \brief simulate spring/damper with ExplicitUpdate function
-private: double kdExplicit;
+private: double kpExplicit_;
+
+  /// \brief simulate spring/damper with ExplicitUpdate function
+private: double kdExplicit_;
     
   /// \brief Specify on which axis the spring is applied.
-private: int axisExplicit;
+private: int axisExplicit_;
 };
 }
 #endif
