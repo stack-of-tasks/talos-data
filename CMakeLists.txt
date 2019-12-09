@@ -37,7 +37,7 @@ catkin_package(
 
 # Find xml_reflection
 ADD_PROJECT_DEPENDENCY(urdfdom REQUIRED)
-ADD_PROJECT_DEPENDENCY(gazebo 7.0.0 REQUIRED)
+ADD_PROJECT_DEPENDENCY(gazebo REQUIRED)
 ADD_PROJECT_DEPENDENCY(roscpp)
 
 # Needed due to the CMakeTarget from gazebo.
