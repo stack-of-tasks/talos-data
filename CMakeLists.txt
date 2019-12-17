@@ -25,7 +25,7 @@ catkin_package(
 # Find xml_reflection
 ADD_REQUIRED_DEPENDENCY("urdfdom >= 0.2.9")
 ADD_REQUIRED_DEPENDENCY("gazebo >= 7.0.0")
-ADD_REQUIRED_DEPENDENCY(roscpp)
+ADD_COMPILE_DEPENDENCY(roscpp)
 
 ADD_LIBRARY(SpringPlugin
   SHARED
