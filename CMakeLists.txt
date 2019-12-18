@@ -5,40 +5,46 @@ SET(PROJECT_NAME talos_data)
 SET(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")
 SET(PROJECT_URL "https://gepgitlab.laas.fr/${PROJECT_ORG}/${PROJECT_NAME}")
 
+SET(PROJECT_USE_CMAKE_EXPORT TRUE)
+SET(CXX_DISABLE_WERROR True)
+SET(CMAKE_CXX_STANDARD 11)
+
 #include(cmake/ros.cmake)
 INCLUDE(cmake/base.cmake)
 
-set(CXX_DISABLE_WERROR True)
-
+# Specify the project.
 COMPUTE_PROJECT_ARGS(PROJECT_ARGS LANGUAGES CXX)
 PROJECT(${PROJECT_NAME} ${PROJECT_ARGS})
 
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+  roscpp)
 
 catkin_package(
   #  INCLUDE_DIRS include
   #  LIBRARIES talos_description
-  #  CATKIN_DEPENDS other_catkin_pkg
+  #  CATKIN_DEPENDS roscpp
   #  DEPENDS system_lib
   )
 
 # Find xml_reflection
-ADD_REQUIRED_DEPENDENCY("urdfdom >= 0.2.9")
-ADD_REQUIRED_DEPENDENCY("gazebo >= 7.0.0")
+ADD_PROJECT_DEPENDENCY(urdfdom REQUIRED)
+ADD_PROJECT_DEPENDENCY(gazebo REQUIRED)
 ADD_COMPILE_DEPENDENCY(roscpp)
 
-ADD_LIBRARY(SpringPlugin
+ADD_LIBRARY(${PROJECT_NAME}
   SHARED
   src/SpringPlugin.cc
   )
 
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PRIVATE ${GAZEBO_INCLUDE_DIRS})
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PRIVATE ${catkin_INCLUDE_DIRS})
+
 INSTALL(TARGETS
-  SpringPlugin
+  ${PROJECT_NAME}
+  EXPORT ${TARGETS_EXPORT_NAME}
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   )
-PKG_CONFIG_USE_DEPENDENCY(SpringPlugin roscpp)
-PKG_CONFIG_USE_DEPENDENCY(SpringPlugin gazebo)
 
 FOREACH(dir config gazebo meshes robots urdf srdf launch)
   INSTALL(DIRECTORY ${dir}/
