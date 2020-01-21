@@ -15,6 +15,9 @@ Some dummy data were added (rotor inertia) to help the dynamic regularization.
 For initial and data validated by PAL-Robotics please see the http://github.com/pal-robotics/talos_robot
 repository.
 
+If you have problem in starting the robot in a specific position you should look at the 
+[python section](#python)
+
 ## Fixed joint
 To start the robot in the air you can use:
 ```
@@ -95,7 +98,13 @@ Finally to have the state of the joint in the topic */joint_states* you need to 
 
 This is telling to ros_control that the passive joint has Position and Effort interfaces.
 
+## Python for launching nodes
 
+In the directory scripts you can start a complete simulation by doing:
+```
+./start_talos_gazebo.py
+```
+In this specific case it will start the robot with a wide base.
 
 
 
