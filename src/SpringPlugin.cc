@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
-*/
+ */
 
 #include "SpringPlugin.hh"
 
@@ -23,9 +23,7 @@ using namespace gazebo;
 GZ_REGISTER_MODEL_PLUGIN(SpringPlugin)
 
 /////////////////////////////////////////////////
-SpringPlugin::SpringPlugin()
-{
-}
+SpringPlugin::SpringPlugin() {}
 
 /////////////////////////////////////////////////
 void SpringPlugin::Load(physics::ModelPtr lmodel,
@@ -35,7 +33,7 @@ void SpringPlugin::Load(physics::ModelPtr lmodel,
 
   // hardcoded params for this test
   if (!lsdf->HasElement("joint_spring"))
-    ROS_ERROR_NAMED("SpringPlugin","No field joint_spring for SpringPlugin");
+    ROS_ERROR_NAMED("SpringPlugin", "No field joint_spring for SpringPlugin");
   else
     jointExplicitName_ = lsdf->Get<std::string>("joint_spring");
 
@@ -65,11 +63,8 @@ void SpringPlugin::Init()
           boost::bind(&SpringPlugin::ExplicitUpdate, this));
 }
 
-
-
 /////////////////////////////////////////////////
-void SpringPlugin::ExplicitUpdate()
-{
+void SpringPlugin::ExplicitUpdate() {
 #if GAZEBO_MAJOR_VERSION < 9
   common::Time currTime = model_->GetWorld()->GetSimTime();
 #else
