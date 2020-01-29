@@ -18,7 +18,14 @@ rospy.init_node('starting_talos_gazebo', anonymous=True)
 uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
 roslaunch.configure_logging(uuid)
 
-launch_gazebo_alone = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/openrobots/share/talos_data/launch/talos_gazebo_alone.launch"])
+cli_args = ['/opt/openrobots/share/talos_data/launch/talos_gazebo_alone.launch',
+            'world:=empty_forced',
+            'enable_leg_passive:=false'
+           ]
+roslaunch_args = cli_args[1:]
+roslaunch_file = [(roslaunch.rlutil.resolve_launch_arguments(cli_args)[0], roslaunch_args)]
+
+launch_gazebo_alone = roslaunch.parent.ROSLaunchParent(uuid, roslaunch_file)
 launch_gazebo_alone.start()
 rospy.loginfo("talos_gazebo_alone started")
 
@@ -28,7 +35,8 @@ gazebo_pause_physics()
 
 time.sleep(5)
 # Spawn talos model in gazebo
-launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/openrobots/share/talos_data/launch/talos_gazebo_spawn_hs_wide.launch"])
+launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/openrobots/share/talos_data/launch/talos_gazebo_spawn_hs.launch"])
+#launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/openrobots/share/talos_data/launch/talos_gazebo_spawn_hs_wide.launch"])
 launch_gazebo_spawn_hs.start()
 rospy.loginfo("talos_gazebo_spawn_hs started")
 
