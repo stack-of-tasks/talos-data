@@ -10,7 +10,7 @@
 
   <arg name="robot"  default="full_v2"/>          <!-- full, lower_body, foot -->
   
-  <include file="$(find talos_gazebo)/launch/talos_spawn.launch">
+  <include file="$(find talos_data)/launch/talos_spawn.launch">
   <arg name="robot"  value="$(arg robot)"/>
   <arg name="gzpose" value="$(arg gzpose)"/>
   </include>

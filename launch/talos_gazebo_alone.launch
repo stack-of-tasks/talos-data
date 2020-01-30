@@ -45,14 +45,4 @@
     </include>
   </group>
 
-
-  <!-- spawn robot in simulation -->
-  <!-- <include file="$(find talos_gazebo)/launch/talos_spawn.launch"> -->
-  <!--   <arg name="robot"  value="$(arg robot)"/> -->
-  <!--   <arg name="gzpose" value="$(arg gzpose)"/> -->
-  <!-- </include> -->
-
-  <!-- default controllers -->
-  <!-- <include file="$(find talos_controller_configuration)/launch/talos_default_controllers.launch"/> -->
-  <!-- <include file="$(find talos_bringup)/launch/talos_bringup.launch" /> -->
 </launch>

@@ -12,7 +12,7 @@
 
 
   <!-- PID gains -->
-  <rosparam command="load" file="$(find talos_hardware_gazebo)/config/pids.yaml"/>
+  <rosparam command="load" file="$(find talos_data)/config/pids.yaml"/>
 
   <!-- Spawn robot in Gazebo -->
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
