@@ -41,10 +41,10 @@ gazebo_pause_physics()
 
 time.sleep(5)
 # Spawn talos model in gazebo
-#launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid,
-#                                                          [talos_data_path+'/launch/talos_gazebo_spawn_hs.launch'])
 launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid,
-                                                          [talos_data_path+'/launch/talos_gazebo_spawn_hs_wide.launch'])
+                                                          [talos_data_path+'/launch/talos_gazebo_spawn_hs.launch'])
+#launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid,
+#                                                          [talos_data_path+'/launch/talos_gazebo_spawn_hs_wide.launch'])
 launch_gazebo_spawn_hs.start()
 rospy.loginfo("talos_gazebo_spawn_hs started")
 
