@@ -56,7 +56,7 @@ INSTALL(TARGETS
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   )
 
-FOREACH(dir config gazebo meshes robots urdf srdf launch)
+FOREACH(dir config gazebo meshes robots urdf scripts srdf launch)
   INSTALL(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 ENDFOREACH(dir)
