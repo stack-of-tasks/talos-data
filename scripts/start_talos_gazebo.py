@@ -26,7 +26,7 @@ roslaunch.configure_logging(uuid)
 
 cli_args = [talos_data_path+'/launch/talos_gazebo_alone.launch',
             'world:=empty_forced',
-            'enable_leg_passive:=true'
+            'enable_leg_passive:=false'
            ]
 roslaunch_args = cli_args[1:]
 roslaunch_file = [(roslaunch.rlutil.resolve_launch_arguments(cli_args)[0], roslaunch_args)]
