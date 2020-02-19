@@ -2,6 +2,10 @@
 # O. Stasse 17/01/2020
 # LAAS, CNRS
 
+# This file is a temporary fix for the ubuntu version 16.04 of the script start_talos_gazebo.py
+# The path to talos_data cannot be retreive using the rospkg.RosPack() and get_path('talos_data') in 16.04.
+# This should be investigated (see issue #3 "Hardcoded talos_data path for 16.04 in script start_talos_gazebo_16_04.py")
+
 import os
 import rospy
 import time
