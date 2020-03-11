@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>talos_data</name>
-  <version>1.2.0</version>
+  <version>1.2.1</version>
   <description>The talos_data package</description>
 
   <maintainer email="olivier.stasse@laas.fr">Olivier Stasse</maintainer>
@@ -15,11 +15,11 @@
   <exec_depend>talos_description_calibration</exec_depend>
   <exec_depend>talos_description_inertial</exec_depend>
   <exec_depend>roscpp</exec_depend>
-  
+
   <test_depend>rostest</test_depend>
   <test_depend>urdf_test</test_depend>
   <test_depend>roscpp</test_depend>
-  
+
   <export>
   </export>
 
