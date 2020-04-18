@@ -46,7 +46,7 @@ ENDIF(SUFFIX_SO_VERSION)
 
 INSTALL(TARGETS ${PROJECT_NAME} EXPORT ${TARGETS_EXPORT_NAME} DESTINATION lib)
 
-FOREACH(dir config gazebo meshes robots urdf scripts srdf launch)
+FOREACH(dir config gazebo meshes robots urdf srdf launch)
   INSTALL(DIRECTORY ${dir} DESTINATION share/${PROJECT_NAME})
 ENDFOREACH(dir)
 
