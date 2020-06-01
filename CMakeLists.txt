@@ -4,7 +4,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
 SET(PROJECT_ORG pyrene-dev)
 SET(PROJECT_NAME talos_data)
 SET(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")
-SET(PROJECT_URL "https://gepgitlab.laas.fr/${PROJECT_ORG}/${PROJECT_NAME}")
+SET(PROJECT_URL "https://gitlab.laas.fr/${PROJECT_ORG}/${PROJECT_NAME}")
 
 # Project options
 OPTION(SUFFIX_SO_VERSION "Suffix library name with its version" ON)
