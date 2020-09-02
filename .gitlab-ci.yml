@@ -1,1 +1,1 @@
-include: http://rainboard.laas.fr/project/talos_data/.gitlab-ci.yml
+include: http://rainboard.laas.fr/project/talos-data/.gitlab-ci.yml
