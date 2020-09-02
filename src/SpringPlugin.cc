@@ -17,7 +17,6 @@
 
 #include "SpringPlugin.hh"
 
-
 using namespace gazebo;
 
 GZ_REGISTER_MODEL_PLUGIN(SpringPlugin)
@@ -26,9 +25,7 @@ GZ_REGISTER_MODEL_PLUGIN(SpringPlugin)
 SpringPlugin::SpringPlugin() {}
 
 /////////////////////////////////////////////////
-void SpringPlugin::Load(physics::ModelPtr lmodel,
-                           sdf::ElementPtr lsdf)
-{
+void SpringPlugin::Load(physics::ModelPtr lmodel, sdf::ElementPtr lsdf) {
   model_ = lmodel;
 
   // hardcoded params for this test
@@ -43,24 +40,18 @@ void SpringPlugin::Load(physics::ModelPtr lmodel,
 
   axisExplicit_ = lsdf->Get<int>("axis");
 
-  ROS_INFO_NAMED("SpringPlugin",
-                 "Loading joint : %s kp: %f kd: %f alongs %d axis",
-                 jointExplicitName_.c_str(),
-                 kpExplicit_,
-                 kdExplicit_,
-                 axisExplicit_);
+  ROS_INFO_NAMED("SpringPlugin", "Loading joint : %s kp: %f kd: %f alongs %d axis", jointExplicitName_.c_str(),
+                 kpExplicit_, kdExplicit_, axisExplicit_);
 }
 
 /////////////////////////////////////////////////
-void SpringPlugin::Init()
-{
+void SpringPlugin::Init() {
   jointExplicit_ = model_->GetJoint(jointExplicitName_);
 
   /*  jointImplicit->SetStiffnessDamping(0, kpImplicit,
       kdImplicit); */
 
-  updateConnection_ = event::Events::ConnectWorldUpdateBegin(
-          boost::bind(&SpringPlugin::ExplicitUpdate, this));
+  updateConnection_ = event::Events::ConnectWorldUpdateBegin(boost::bind(&SpringPlugin::ExplicitUpdate, this));
 }
 
 /////////////////////////////////////////////////
@@ -80,7 +71,6 @@ void SpringPlugin::ExplicitUpdate() {
   double pos = jointExplicit_->Position(axisExplicit_);
 #endif
   double vel = jointExplicit_->GetVelocity(axisExplicit_);
-  double force = -kpExplicit_ * pos
-                 -kdExplicit_ * vel;
+  double force = -kpExplicit_ * pos - kdExplicit_ * vel;
   jointExplicit_->SetForce(axisExplicit_, force);
 }

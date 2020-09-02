@@ -28,33 +28,46 @@
 
 #pragma GCC diagnostic pop
 
-namespace gazebo
-{
-class GAZEBO_VISIBLE SpringPlugin : public ModelPlugin
-{
-public: SpringPlugin();
-public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf);
-public: virtual void Init();
+namespace gazebo {
+class GAZEBO_VISIBLE SpringPlugin : public ModelPlugin {
+ public:
+  SpringPlugin();
 
-private: void ExplicitUpdate();
+ public:
+  virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf);
 
-private: event::ConnectionPtr updateConnection_;
+ public:
+  virtual void Init();
 
-private: physics::ModelPtr model_;
+ private:
+  void ExplicitUpdate();
 
-private: common::Time prevUpdateTime_;
+ private:
+  event::ConnectionPtr updateConnection_;
 
-private: physics::JointPtr jointExplicit_;
-private: std::string jointExplicitName_;
+ private:
+  physics::ModelPtr model_;
+
+ private:
+  common::Time prevUpdateTime_;
+
+ private:
+  physics::JointPtr jointExplicit_;
+
+ private:
+  std::string jointExplicitName_;
 
   /// \brief simulate spring/damper with ExplicitUpdate function
-private: double kpExplicit_;
+ private:
+  double kpExplicit_;
 
   /// \brief simulate spring/damper with ExplicitUpdate function
-private: double kdExplicit_;
-    
+ private:
+  double kdExplicit_;
+
   /// \brief Specify on which axis the spring is applied.
-private: int axisExplicit_;
+ private:
+  int axisExplicit_;
 };
-}
+}  // namespace gazebo
 #endif
