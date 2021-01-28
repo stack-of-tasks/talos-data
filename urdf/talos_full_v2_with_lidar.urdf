@@ -272,8 +272,8 @@
     <visual>
       <origin rpy="1.57079632679 0 1.57079632679" xyz="0.0149 -0.0175 0"/>
       <geometry>
-        <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-        <mesh filename="package://realsense2_description/meshes/d435.dae"/>
+        <box size="0.090 0.025 0.02505"/>
+        <!--mesh filename="package://realsense2_description/meshes/d435.dae"/>-->
         <!--<mesh filename="package://realsense2_description/meshes/d435/d435.dae" />-->
       </geometry>
       <material name="head_d435_camera_aluminum"/>
@@ -490,14 +490,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://realsense2_description/meshes/t265.stl"/>
+        <box size="0.090 0.025 0.02505"/>
       </geometry>
       <material name="head_t265_camera_aluminum"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://realsense2_description/meshes/t265.stl"/>
+        <box size="0.090 0.025 0.02505"/>
       </geometry>
     </collision>
     <inertial>
