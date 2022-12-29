@@ -1,28 +1,39 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+cmake_minimum_required(VERSION 3.1)
 
 # Project properties
-SET(PROJECT_ORG stack-of-tasks)
-SET(PROJECT_NAME talos_data)
-SET(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")
-SET(PROJECT_URL "https://github.com/${PROJECT_ORG}/${PROJECT_NAME}")
+set(PROJECT_ORG stack-of-tasks)
+set(PROJECT_NAME talos_data)
+set(PROJECT_DESCRIPTION "Talos urdf model, srdf model and other data")
+set(PROJECT_URL "https://github.com/${PROJECT_ORG}/${PROJECT_NAME}")
 
 # Project configuration
-SET(PROJECT_USE_CMAKE_EXPORT TRUE)
+set(PROJECT_USE_CMAKE_EXPORT TRUE)
 
 # JRL-cmakemodule setup
-INCLUDE(cmake/base.cmake)
+include(cmake/base.cmake)
 
 # Project definition
-COMPUTE_PROJECT_ARGS(PROJECT_ARGS LANGUAGES CXX C)
-PROJECT(${PROJECT_NAME} ${PROJECT_ARGS})
+compute_project_args(PROJECT_ARGS LANGUAGES CXX C)
+project(${PROJECT_NAME} ${PROJECT_ARGS})
 
 # Main Library
-ADD_LIBRARY(${PROJECT_NAME} INTERFACE)
-INSTALL(TARGETS ${PROJECT_NAME} EXPORT ${TARGETS_EXPORT_NAME} DESTINATION lib)
+add_library(${PROJECT_NAME} INTERFACE)
+install(
+  TARGETS ${PROJECT_NAME}
+  EXPORT ${TARGETS_EXPORT_NAME}
+  DESTINATION lib)
 
-FOREACH(dir config gazebo meshes robots urdf srdf launch)
-  INSTALL(DIRECTORY ${dir} DESTINATION share/${PROJECT_NAME})
-ENDFOREACH(dir)
+foreach(
+  dir
+  config
+  gazebo
+  meshes
+  robots
+  urdf
+  srdf
+  launch)
+  install(DIRECTORY ${dir} DESTINATION share/${PROJECT_NAME})
+endforeach(dir)
 
-INSTALL(FILES package.xml DESTINATION share/${PROJECT_NAME})
-SET(PACKAGE_EXTRA_MACROS "set(TALOS_DATA_PREFIX ${CMAKE_INSTALL_PREFIX})")
+install(FILES package.xml DESTINATION share/${PROJECT_NAME})
+set(PACKAGE_EXTRA_MACROS "set(TALOS_DATA_PREFIX ${CMAKE_INSTALL_PREFIX})")

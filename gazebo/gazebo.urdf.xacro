@@ -23,7 +23,7 @@
       <topicName>wrench</topicName>
     </plugin>
   </gazebo>
-  
+
 
   <gazebo reference="imu_link">
     <!-- this is expected to be reparented to pelvis with appropriate offset
@@ -52,7 +52,7 @@
                the biases are fixed additive offsets.  We choose
                bias means and stddevs to produce biases close to the provided
                data. -->
-               
+
           <!--
           <rate>
             <mean>0.0</mean>
@@ -67,8 +67,8 @@
             <bias_stddev>0.001</bias_stddev>
           </accel>
           -->
-          
-          
+
+
           <rate>
             <mean>0.0</mean>
             <stddev>0.0</stddev>
@@ -81,8 +81,8 @@
             <bias_mean>0.0</bias_mean>
             <bias_stddev>0.000</bias_stddev>
           </accel>
-          
-          
+
+
         </noise>
       </imu>
     </sensor>
@@ -92,4 +92,3 @@
   <!-- <xacro:property name="M_PI" value="3.1415926535897931" /> -->
 
 </robot>
-

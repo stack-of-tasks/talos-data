@@ -29,7 +29,7 @@
   <xacro:unless value="${var_enable_leg_passive != 'true'}">
     <xacro:include filename="$(find talos_data)/urdf/leg/leg.urdf.xacro" />
   </xacro:unless> -->
-  
+
   <xacro:include filename="$(find talos_data)/urdf/leg/foot_collision_$(arg foot_collision).urdf.xacro" />
   <xacro:include filename="$(find talos_description_inertial)/urdf/inertial.xacro" />
 

@@ -9,10 +9,10 @@
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 1.02 -R 0.0 -P 0.0 -Y 0.0 $(arg left_leg_pose) $(arg right_leg_pose) $(arg left_arm_pose) $(arg right_arm_pose) $(arg torso_pose) -u" />
 
   <arg name="robot"  default="full_v2"/>          <!-- full, lower_body, foot -->
-  
+
   <include file="$(find talos_gazebo)/launch/talos_spawn.launch">
   <arg name="robot"  value="$(arg robot)"/>
   <arg name="gzpose" value="$(arg gzpose)"/>
   </include>
-  
+
 </launch>

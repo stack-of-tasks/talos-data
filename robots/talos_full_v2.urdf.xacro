@@ -30,8 +30,8 @@
   <xacro:property name="var_enable_leg_passive" value="$(arg enable_leg_passive)"/>
   <xacro:if value="${var_enable_leg_passive != 'true'}">
     <xacro:include filename="$(find talos_data)/urdf/leg/leg.urdf.xacro" />
-  </xacro:if> 
-  
+  </xacro:if>
+
   <xacro:include filename="$(find talos_data)/urdf/leg/foot_collision_$(arg foot_collision).urdf.xacro" />
   <xacro:include filename="$(find talos_description_inertial)/urdf/inertial.xacro" />
 

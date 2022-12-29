@@ -27,5 +27,3 @@
   <xacro:property name="cal_head_mount_xtion_yaw"   value="0.0" />
 
 </robot>
-
-

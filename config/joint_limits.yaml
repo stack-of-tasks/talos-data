@@ -58,4 +58,3 @@ joint_limits:
     max_velocity: *max_arm_vel
 
   # Hands and legs keep the default values from URDF
-

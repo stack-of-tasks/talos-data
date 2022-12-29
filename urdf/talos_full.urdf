@@ -2188,8 +2188,8 @@
         <geometry>
           <mesh filename="package://talos_data/meshes/v2/ankle_X_collision.stl" scale="1 ${reflect*1} 1"/>
         </geometry>
-      </collision> 
-      
+      </collision>
+
       -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.1"/>
@@ -2514,8 +2514,8 @@
         <geometry>
           <mesh filename="package://talos_data/meshes/v2/ankle_X_collision.stl" scale="1 ${reflect*1} 1"/>
         </geometry>
-      </collision> 
-      
+      </collision>
+
       -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.1"/>
