@@ -1,5 +1,9 @@
-Talos_data
-==========
+# Talos_data
+
+[![Pipeline status](https://gitlab.laas.fr/stack-of-tasks/talos_data/badges/master/pipeline.svg)](https://gitlab.laas.fr/stack-of-tasks/talos_data/commits/master)
+[![Coverage report](https://gitlab.laas.fr/stack-of-tasks/talos_data/badges/master/coverage.svg?job=doc-coverage)](https://gepettoweb.laas.fr/doc/stack-of-tasks/talos_data/master/coverage/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/stack-of-tasks/talos_data/master.svg)](https://results.pre-commit.ci/latest/github/stack-of-tasks/talos_data)
 
 ## Introduction
 
@@ -15,7 +19,7 @@ Some dummy data were added (rotor inertia) to help the dynamic regularization.
 For initial and data validated by PAL-Robotics please see the http://github.com/pal-robotics/talos_robot
 repository.
 
-If you have problem in starting the robot in a specific position you should look at the 
+If you have problem in starting the robot in a specific position you should look at the
 [python section](#python)
 
 ## Fixed joint
@@ -105,8 +109,3 @@ In the directory scripts you can start a complete simulation by doing:
 ./start_talos_gazebo.py
 ```
 In this specific case it will start the robot with a wide base.
-
-
-
-
-
